@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import "./App.css";
 
 export default function App() {
@@ -34,6 +35,7 @@ export default function App() {
     }
 
     const handleSubmit = (event) => {
+        
         event.preventDefault()
         
         console.log(formData)
@@ -51,7 +53,10 @@ export default function App() {
              'Content-type': 'application/json; charset=UTF-8',
           },
        })
-          .then((res) => console.log(res.json()))         
+          .then((res) => {
+            console.log(res.json())
+            
+          })         
           .catch((err) => {
              console.log(err.message);
           });
